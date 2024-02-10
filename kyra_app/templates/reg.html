@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+{%csrf_token%}
+
+<div class="">
+    Username : {{form.username}}
+</div>
+<div class="">
+    Email : {{form.email}}
+</div>
+<div class="">
+    Password : {{form.password}}
+</div>
+<div class="">
+    <button type="submit">Register</button>
+</div>
+</body>
+</html>

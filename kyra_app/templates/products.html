@@ -1,0 +1,63 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<div class="container ">
+    <div class="h4 pb-2 mb-4 text-dark  text-center  my-3 ">
+        <h1>{{ category.name }}</h1>
+    </div>
+
+    {%load static%}
+    <div class="row justify-content-center ">
+        {%for i in data%}
+        <div class="col-md-3  ">
+
+            <a class="text-decoration-none " href="{% url 'products' i.id%}">
+                <div class="card mb-3  "style="width: 12rem;">
+                    <img src="{{ i.image.url }}" class="card-img-top img-fluid" alt="..." height="300px" width="400px">
+                    <div class="card-body text-center">
+                        <p class="card-title  " style="color: black; ">{{i.name}}</p>
+                    </div>
+            </a>
+
+            <div class=" text-center  "> <s>Rs.{{i.actual_price}}.00</s>
+                <h5>Rs.{{i.selling_price}}.00</h5>
+            </div>
+        </div>
+    </div>
+    <!-- <p<span class="float-end">{{i.selling_price}}</span></p> -->
+
+
+{% endfor %}
+
+
+
+<style>
+    .card {
+        border: none;
+    }
+
+    .a {
+        text-decoration: none;
+    }
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>hello</h1>
+    {% for product in data %}
+    {{product.name}}
+    {{product.category}}
+
+    {%endfor%} */
+</body>
+</html>
